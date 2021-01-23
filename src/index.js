@@ -1,17 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// import { heroes } from './data/heroes'; importado normal
+// import {heroes} from './data/heroes' importado con el shothand imp
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import { heroes } from './data/heroes';
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const getHeroeById = id => heroes.find( heroes => heroes.id === id );
+// console.log(heroes)
+console.log( getHeroeById(1));
+
+
+const getHeroByOwner = owner => heroes.find( heroes => heroes.owner === owner );
+console.log(getHeroByOwner('DC'))
